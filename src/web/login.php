@@ -1,5 +1,5 @@
 <?php
-$host = "postgres"; 
+$host = "db"; 
 $port = "5432";
 $dbname = "your_database_name";
 $user = "your_postgres_user";

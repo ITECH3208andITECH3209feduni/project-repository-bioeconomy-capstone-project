@@ -22,14 +22,12 @@ services:
       context: .
       dockerfile: images/django.Dockerfile
     command:
-      - bash
-    tty: true
-      #- python
-      #- manage.py
-      #- runserver
-      #- 0.0.0.0:8000
-    volumes: []
-      #- ./src/mysite:/app
+      - python
+      - manage.py
+      - runserver
+      - 0.0.0.0:8000
+    volumes:
+      - ./src/mysite:/app
     ports:
       - "8000:8000"
     depends_on:
