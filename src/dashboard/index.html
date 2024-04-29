@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='shortcut icon' type='image/x-icon' href='../assets/logo.png' />
+    <title>Dashboard | Bioeconomy</title>
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="../" class="logo-container">
+                <img src="../assets/logo.png" width="100" alt="">
+            </a>
+            <nav>
+                <a href="../">Sign Out</a>
+                <select class="Category">
+                    <option value="none">Select Category</option>
+                    <option value="milk">Milk</option>
+                </select>
+            </nav>
+            <div class="header-menu">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="map-sec">
+            <div class="container">
+                <h2>Victoria Regions</h2>
+
+                <div class="map-container">
+                    <svg id="map"></svg>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Annual Unused Resources</h3>
+                        <canvas id="pieChart" class="blur"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Annual Estimation Data</h3>
+                        <canvas id="doughnutChart" class="blur"></canvas>
+                    </div>
+                </div>
+                <h3>Waste Types with total volume</h3>
+                <canvas id="wasteTypeChart" class="blur"></canvas>
+                <h3 style="margin-top: 50px;">Waste data table</h3>
+                <div class="content-box dnone">
+                    <table>
+                        <tr>
+                            <th>Location</th>
+                            <th>Industry</th>
+                            <th>Waste Type</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <a id="region-map"></a>
+        <section id="sec-1">
+            <div class="container">
+                <h2>Dashboard</h2>
+                <div class="grid">
+                    <div id="region-map-container">
+                        <img src="../assets/regionmap.gif" alt="Region Map" style="width: 500px; height: 378px;">
+                    </div>
+                    
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, provident cum, natus facere excepturi omnis minus ad mollitia sed veniam quibusdam placeat aliquid est! Eius omnis alias repellendus fugit aperiam exercitationem
+                            nostrum pariatur molestias explicabo, obcaecati ipsum voluptatum labore maxime dolorum nesciunt vero dolor cumque ipsam voluptates reiciendis nisi! Beatae.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Copyright @ 2023</p>
+        </div>
+    </footer>
+    <div class="popup-container">
+        <div class="popup-inner">
+            <div class="popup-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#0F1729"/>
+                    </svg>
+            </div>
+            <div class="popup-body"></div>
+        </div>
+    </div>
+    <script>
+        const wasteMappingDataUrl = '../js/data/waste-mapping-data.json';
+        const regionURL = '../js/data/regions.json';
+        const showMapPopup = true;
+    </script>
+    <script src="../js/chart-utils.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"></script>
+    <script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <script src="../js/chart-data.js"></script>
+    <script src="../js/default.js"></script>
+    <script src="../js/map.chart.js"></script>
+    <script src="../js/chatjs.scripts.js"></script>
+    <script>
+        const dataSec = document.querySelector('#map-sec')
+        let countChecking = 0;
+
+        function dataChecker() {
+            countChecking++;
+            if (wasteData.length > 0) {
+                main();
+                runMapChart()
+            } else {
+                setTimeout(() => {
+                    console.log("checking: " + countChecking); 
+                    dataChecker();
+                }, 50); 
+            }
+        }
+        dataChecker();
+    </script>
+    <script>
+        window.onload = function() {
+            console.log("Window fully loaded");
+    
+            
+            function scrollToTarget() {
+                if (window.location.hash) {
+                    console.log("Hash found in the URL:", window.location.hash);
+                    var targetElement = document.querySelector(window.location.hash);
+    
+                    if (targetElement) {
+                        
+                        var offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 100;
+    
+                        console.log("Scrolling to position:", offsetPosition);
+    
+                       
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    } else {
+                        console.error("Target element not found for hash:", window.location.hash);
+                    }
+                } else {
+                    console.log("No hash found in the URL");
+                }
+            }
+    
+            // Execute the scroll function shortly after the page load
+            setTimeout(scrollToTarget, 100); // Adjust this timeout as needed
+        };
+    </script>
+    
+    
+</body>
+
+</html>
