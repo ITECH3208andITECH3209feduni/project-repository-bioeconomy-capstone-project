@@ -224,9 +224,9 @@
                 runMapChart()
             } else {
                 setTimeout(() => {
-                    console.log("checking: " + countChecking); // show how many times checking for data
+                    console.log("checking: " + countChecking); 
                     dataChecker();
-                }, 50); // wait for 50ms for each checking
+                }, 50); 
             }
         }
         dataChecker();
@@ -344,8 +344,8 @@
         <script>
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
-                duration: 1200,  // values from 0 to 3000, with step 50ms
-                once: true,      // whether animation should happen only once - while scrolling down
+                duration: 1200,  
+                once: true,      
             });
         });
         </script>
