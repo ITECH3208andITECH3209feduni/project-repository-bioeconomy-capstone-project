@@ -9,7 +9,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./src/web:/var/www/html
+      - ./src/website-ver-2:/var/www/html
     command:
       - php 
       - -S 
