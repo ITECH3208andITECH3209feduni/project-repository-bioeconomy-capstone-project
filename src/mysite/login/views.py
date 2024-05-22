@@ -4,37 +4,6 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-
-def test_view(request):
-    section = {
-        "title": "test page",
-    }
-    return render(request, 'test.html', context={'section': section})
-
-def index_view(request):
-    section = {
-        "title": "Home | BioEconomy Innovation",
-    }
-    return render(request, 'index.html', context={'section': section})
-
-def about_view(request):
-    section = {
-        "title": "About | BioEconomy Innovation",
-    }
-    return render(request, 'about.html', context={'section': section})
-
-def dashboard_view(request):
-    section = {
-        "title": "Dashboard | BioEconomy Innovation",
-    }
-    return render(request, 'dashboard.html', context={'section': section})
-
-def contact_view(request):
-    section = {
-        "title": "Contact | BioEconomy Innovation",
-    }
-    return render(request, 'contact.html', context={'section': section})
-
 def login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email', '')  # Use .get() to avoid KeyError
@@ -60,7 +29,7 @@ def login_view(request):
     
 @login_required
 def success_view(request):
-    return render(request, '')
+    return render(request, '/polls/')
 
 def logout_view(request):
     logout(request)
