@@ -47,6 +47,8 @@ services:
       POSTGRES_DB: your_database_name
       POSTGRES_USER: your_postgres_user
       POSTGRES_PASSWORD: your_postgres_password
+    volumes:
+       - /mnt/data:/var/lib/postgresql/data
     
   
   
