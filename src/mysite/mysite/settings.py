@@ -78,11 +78,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("DB_NAME"),
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
-        'HOST': os.getenv("DB_HOST"),
-        'PORT': os.getenv("DB_PORT"),
+        'NAME': os.getenv("ACCOUNTS_DB_NAME"),
+        'USER': os.getenv("ACCOUNTS_DB_USER"),
+        'PASSWORD': os.getenv("ACCOUNTS_DB_PASSWORD"),
+        'HOST': os.getenv("ACCOUNTS_DB_HOST"),
+        'PORT': os.getenv("ACCOUNTS_DB_PORT"),
+    },
+    'bioeconomy_db': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv("BIOECONOMY_DB_NAME"),
+        'USER': os.getenv("BIOECONOMY_DB_USER"),
+        'PASSWORD': os.getenv("BIOECONOMY_DB_PASSWORD"),
+        'HOST': os.getenv("BIOECONOMY_DB_HOST"),
+        'PORT': os.getenv("BIOECONOMY_DB_PORT"),
     }
 }
 
