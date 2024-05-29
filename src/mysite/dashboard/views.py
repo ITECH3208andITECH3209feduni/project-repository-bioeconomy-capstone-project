@@ -5,6 +5,9 @@ from .forms import UploadFileForm
 from .models import WasteData
 from .models import WasteData
 from django.contrib import messages
+from django.core.serializers import serialize
+from .models import WasteData
+from django.http import JsonResponse
 import os
 
 def handle_uploaded_csv(csv_file):
@@ -104,3 +107,7 @@ def dashboard_view(request):
         'messages': messages_data,
     }
     return render(request, 'dashboard.html', context=context)
+
+def get_waste_data(request):
+    data = WasteData.objects.all().values()
+    return JsonResponse(list(data), safe=False)

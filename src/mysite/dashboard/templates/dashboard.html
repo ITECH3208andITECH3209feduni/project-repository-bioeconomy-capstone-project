@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gippsland Waste Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
 <body>
     <header>
-        <h1><a href="{% url 'index' %}" class="nav-item nav-link">Gippsland Waste Dashboard</a></h1>
+        <h1><a href="{% url 'index' %}" class="nav-item nav-link">Gippsland Byproduct Dashboard</a></h1>
         <select id="region-dropdown"></select>
+        {% if user.is_authenticated and user.is_superuser %}
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">Upload File</button>
+        {% else %} 
+        {% endif %}
     </header>
 
     {% if messages %}
@@ -34,6 +38,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    {% if user.is_authenticated and user.is_superuser %}
                     <form id="uploadForm" action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3">
@@ -42,13 +47,32 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Upload</button>
                     </form>
+                    {% else %}
+                    <p>Only administrators can upload files.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 
+    <section id="summary">
+        <div>Total Sites: <span id="total-sites"></span></div>
+        <div>Total Volume (MT): <span id="total-volume"></span></div>
+        <div>Average Moisture (%): <span id="average-moisture"></span></div>
+    </section>
+    <section id="charts">
+        <canvas id="wasteVolumeChart"></canvas>
+        <canvas id="donutChartTotalWaste"></canvas>
+        <canvas id="donutChartTotalWasteExclForestry"></canvas>
+        <canvas id="industryContributionChart"></canvas>
+        <canvas id="wasteDestinationChart"></canvas>
+        <canvas id="seasonalVolumeChart"></canvas>
+        <canvas id="wasteProfileChart"></canvas>
+    </section>
+    <section id="details-table">
+    </section>
+    
     <script src="{% static 'js/dashboard.js' %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

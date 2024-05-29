@@ -12,8 +12,9 @@ python manage.py createsuperuser
 
 docker-compose exec web bash -c 'django-admin startapp $appname'
 
-psql -U bioeconomy_db_user -d bioeconomy_db
+docker-compose exec bioeconomy_db bash
 
+psql -U bioeconomy_db_user -d bioeconomy_db
 
 CREATE TABLE dashboard_wastedata (
     id SERIAL PRIMARY KEY,
@@ -39,6 +40,8 @@ CREATE TABLE dashboard_wastedata (
 SELECT * FROM dashboard_wastedata;
 
 DROP TABLE dashboard_wastedata;
+
+TRUNCATE TABLE dashboard_wastedata RESTART IDENTITY;
 
 
 
