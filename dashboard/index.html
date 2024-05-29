@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gippsland Waste Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Gippsland Waste Dashboard</h1>
+        <select id="region-dropdown">
+        </select>
+    </header>
+    <main>
+        <section id="summary">
+            <div>Total Sites: <span id="total-sites"></span></div>
+            <div>Total Volume (MT): <span id="total-volume"></span></div>
+            <div>Average Moisture (%): <span id="average-moisture"></span></div>
+        </section>
+        <section id="charts">
+            <canvas id="wasteVolumeChart"></canvas>
+            <canvas id="donutChartTotalWaste"></canvas>
+            <canvas id="donutChartTotalWasteExclForestry"></canvas>
+            <canvas id="industryContributionChart"></canvas>
+            <canvas id="wasteDestinationChart"></canvas>
+            <canvas id="seasonalVolumeChart"></canvas>
+            <canvas id="wasteProfileChart"></canvas>
+            <canvas id="stackedBarChart"></canvas>
+            <canvas id="lineChart"></canvas>
+            <canvas id="scatterPlot"></canvas>
+        </section>
+        <section id="details-table">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
