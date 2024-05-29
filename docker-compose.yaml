@@ -16,29 +16,13 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - accounts_db
       - bioeconomy_db  # Depends on bioeconomy_db service
     environment:
       - DJANGO_SECRET_KEY=your_secret_key
-      - ACCOUNTS_DB_HOST=accounts_db  # Update DB_HOST to ACCOUNTS_DB_HOST
-      - ACCOUNTS_DB_NAME=accounts_db
-      - ACCOUNTS_DB_USER=accounts_db_user
-      - ACCOUNTS_DB_PASSWORD=accounts_db_password
       - BIOECONOMY_DB_HOST=bioeconomy_db  # Add environment variables for bioeconomy_db
       - BIOECONOMY_DB_NAME=bioeconomy_db
       - BIOECONOMY_DB_USER=bioeconomy_db_user
       - BIOECONOMY_DB_PASSWORD=bioeconomy_db_password
-
-  # PostgreSQL database service for accounts data
-  accounts_db:
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_DB: accounts_db
-      POSTGRES_USER: accounts_db_user
-      POSTGRES_PASSWORD: accounts_db_password
-    volumes:
-      - accounts-db-data:/var/lib/postgresql/data
 
   # PostgreSQL database service for bioeconomy data
   bioeconomy_db:
@@ -52,5 +36,4 @@ services:
       - bioeconomy-db-data:/var/lib/postgresql/data
 
 volumes:
-  accounts-db-data:
   bioeconomy-db-data:

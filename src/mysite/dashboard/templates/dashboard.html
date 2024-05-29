@@ -7,34 +7,48 @@
     <title>Gippsland Waste Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
 <body>
     <header>
         <h1><a href="{% url 'index' %}" class="nav-item nav-link">Gippsland Waste Dashboard</a></h1>
-        <select id="region-dropdown">
-        </select>
+        <select id="region-dropdown"></select>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">Upload File</button>
     </header>
-    <main>
-        <section id="summary">
-            <div>Total Sites: <span id="total-sites"></span></div>
-            <div>Total Volume (MT): <span id="total-volume"></span></div>
-            <div>Average Moisture (%): <span id="average-moisture"></span></div>
-        </section>
-        <section id="charts">
-            <canvas id="wasteVolumeChart"></canvas>
-            <canvas id="donutChartTotalWaste"></canvas>
-            <canvas id="donutChartTotalWasteExclForestry"></canvas>
-            <canvas id="industryContributionChart"></canvas>
-            <canvas id="wasteDestinationChart"></canvas>
-            <canvas id="seasonalVolumeChart"></canvas>
-            <canvas id="wasteProfileChart"></canvas>
-            <canvas id="stackedBarChart"></canvas>
-            <canvas id="lineChart"></canvas>
-            <canvas id="scatterPlot"></canvas>
-        </section>
-        <section id="details-table">
-        </section>
-    </main>
+
+    {% if messages %}
+    <div class="alert alert-dismissible {% if messages.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        {% for message in messages %}
+        {{ message.message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Upload CSV File</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadForm" action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="csvFile" class="form-label">Select CSV file</label>
+                            <input type="file" class="form-control" id="csvFile" name="csv_file" accept=".csv" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
