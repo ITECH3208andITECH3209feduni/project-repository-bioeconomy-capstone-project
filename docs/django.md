@@ -39,9 +39,6 @@ CREATE TABLE dashboard_wastedata (
 
 SELECT * FROM dashboard_wastedata;
 
-DROP TABLE dashboard_wastedata;
-
 TRUNCATE TABLE dashboard_wastedata RESTART IDENTITY;
 
-
-
+DROP TABLE dashboard_wastedata;
