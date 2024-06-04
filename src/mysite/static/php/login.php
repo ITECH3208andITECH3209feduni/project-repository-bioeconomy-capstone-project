@@ -11,7 +11,7 @@ if (!$conn) {
     die("Connection failed: " . pg_last_error());
 }
 
-echo "Connected successfully";
+header("location:../index.html");
 
 // Function to sanitize user input
 function sanitize_input($data) {

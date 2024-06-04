@@ -1,54 +1,39 @@
 version: '3.8'
 
 services:
-  # PHP application service
-  php:
-    build:
-      context: .
-      dockerfile: images/php.Dockerfile
-    ports:
-      - "80:80"
-    volumes:
-      - ./src/website-ver-2:/var/www/html
-    command:
-      - php 
-      - -S 
-      - 0.0.0.0:80
-    tty: true
-
   # Django application service
   web:
     build:
       context: .
       dockerfile: images/django.Dockerfile
     command:
-      - bash
-    tty: true
-      #- python
-      #- manage.py
-      #- runserver
-      #- 0.0.0.0:8000
-    volumes: []
-      #- ./src/mysite:/app
+      - python
+      - manage.py
+      - runserver
+      - 0.0.0.0:8000
+    volumes:
+      - ./src/mysite:/app
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - bioeconomy_db  # Depends on bioeconomy_db service
     environment:
       - DJANGO_SECRET_KEY=your_secret_key
-      - DB_HOST=db
-      - DB_NAME=your_database_name
-      - DB_USER=your_postgres_user
-      - DB_PASSWORD=your_postgres_password
+      - BIOECONOMY_DB_HOST=bioeconomy_db  # Add environment variables for bioeconomy_db
+      - BIOECONOMY_DB_NAME=bioeconomy_db
+      - BIOECONOMY_DB_USER=bioeconomy_db_user
+      - BIOECONOMY_DB_PASSWORD=bioeconomy_db_password
 
-  # PostgreSQL database service
-  db:
+  # PostgreSQL database service for bioeconomy data
+  bioeconomy_db:
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_DB: your_database_name
-      POSTGRES_USER: your_postgres_user
-      POSTGRES_PASSWORD: your_postgres_password
-    
-  
-  
+      POSTGRES_DB: bioeconomy_db  # Name of the database
+      POSTGRES_USER: bioeconomy_db_user
+      POSTGRES_PASSWORD: bioeconomy_db_password
+    volumes:
+      - bioeconomy-db-data:/var/lib/postgresql/data
+
+volumes:
+  bioeconomy-db-data:
