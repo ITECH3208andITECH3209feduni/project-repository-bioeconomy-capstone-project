@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -39,94 +39,98 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-0">
+    <!-- Header -->
+    <div class="container-fluid bg-dark-green px-0">
         <div class="row g-0 d-none d-lg-flex">
-            <div class="col-lg-6 ps-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center text-light">
-                    <span>Follow Us:</span>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+            <div class="col-lg-12">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 text-start py-2">
+                            <div class="h-100 d-inline-flex align-items-center text-white">
+                                <i class="fa fa-map-marker-alt text-secondary me-2"></i>
+                                <span>Gippsland, VIC</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5">
-        <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <div style="display: flex; align-items: center; width: 30%; height: auto;">
-                <img src="img/Navbar/Gipps_Logo_No_BG.png" style="max-width: 30%; height: auto;">
-                <h1 class="m-0" >BioEconomy Innovation</h1>
-            </div>   
-        </a>
-        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="https://www.circularfarms.com.au/home-1" class="nav-item nav-link">Marketplace</a>
-                <a href="" class="nav-item nav-link">Dashboard</a>
-                <a href="login.html" class="nav-item nav-link">Login</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark-green navbar-light sticky-top">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/Navbar/Logo_Gipps.png" alt="BioEconomy Innovation">
+                <span>BioEconomy Innovation</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link" id="home-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link" id="about-link">About</a>
+                    <a href="https://www.circularfarms.com.au/home-1" class="nav-item nav-link">Marketplace</a>
+                    <a href="dashboard.html" class="nav-item nav-link" id="dashboard-link">Dashboard</a>
+                    <a href="contact.html" class="nav-item nav-link" id="contact-link">Contact</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="#FF6600"></circle>
+                                <path d="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" fill="#FFD700"></path>
+                                <path d="M16 16C16 13.7909 14.2091 12 12 12C9.79086 12 8 13.7909 8 16" stroke="#FFD700" stroke-width="2"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="login.html" class="dropdown-item" id="login-link">Login</a>
+                            <a href="account.html" class="dropdown-item" id="account-link">My Account</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-    
-    <!-- Carousel Start -->
+
+    <!-- Carousel -->
     <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/Carousel/Login_BG.jpg" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-lg-8 text-start">
-                                    <h1 class="display-1 text-white mb-5 animated slideInRight">Welcome to BioEconomy Innovation Page</h1>
-                                    <a href="" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight">Explore More</a>
-                                </div>
+                    <img class="w-100 rounded bioca-img" src="img/Carousel/Login_BG.jpg" alt="Image">
+                    <div class="carousel-caption animated fadeInUp">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-8 text-start">
+                                <h1 class="display-1 text-white mb-5">Welcome to BioEconomy Innovation</h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/Carousel/Total_Waste_Weight_Gippsland_Excluding_Forestry.jpg" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-end">
-                                <div class="col-lg-8 text-end">
-                                    <h1 class="display-1 text-white mb-5 animated slideInRight">Waste Chart in Gippsland</h1>
-                                    <p class="fs-4 text-white">Total waste type by weight produced in the Gippsland region excluding forestry waste</p>
-                                    <a href="" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInLeft">Explore More</a>
-                                </div>
+                    <img class="w-100 rounded" src="img/Carousel/Total_Waste_Weight_Gippsland_Excluding_Forestry.jpg" alt="Image">
+                    <div class="carousel-caption animated fadeInUp">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-8 text-end">
+                                <h1 class="display-1 text-white mb-5">Resource Utilization Chart in Gippsland</h1>
+                                <p class="fs-4 text-white">Total resource utilization by weight produced in the Gippsland region excluding forestry byproducts</p>
+                                <a href="dashboard.html" class="btn btn-outline-secondary">View Dashboard</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
     </div>
-    <!-- Carousel End -->
 
-    <!-- About Start -->
+    <!-- About Section -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5 align-items-end">
@@ -152,15 +156,14 @@
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="section-title bg-white text-start text-primary pe-3">About Us</p>
                     <h1 class="mb-4">Empowering Gippsland's Sustainable Future Through Bioenergy.</h1>
-                    <p class="mb-4">The BioEconomy Innovation Network project is a multifaceted endeavour aimed at catalysing sustainability, innovation, and growth within the BioEconomy sector in Gippsland. </p>
-                    <a class="btn btn-secondary rounded-pill py-3 px-5" href="">Explore More</a>
+                    <p class="mb-4">The BioEconomy Innovation Network project is a multifaceted endeavour aimed at catalysing sustainability, innovation, and growth within the BioEconomy sector in Gippsland.</p>
+                    <a href="about.html" class="btn btn-primary py-2 px-4">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
 
-    <!-- Features Start -->
+    <!-- Project Opportunities Section -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5 align-items-center">
@@ -171,35 +174,30 @@
                     <p><i class="fa fa-check text-primary me-3"></i>Total investment opportunity: $670 million over three years</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Potential creation of over 650 direct and indirect jobs</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Expected annual revenues of more than $270 million</p>
-                    <a class="btn btn-secondary rounded-pill py-3 px-5 mt-3" href="">Explore More</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="rounded overflow-hidden">
                         <div class="row g-0">
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="text-center bg-primary py-5 px-4">
-                                    <img class="img-fluid mb-4" src="" alt="">
                                     <h1 class="display-6 text-white" data-toggle="counter-up">281</h1>
                                     <span class="fs-5 fw-semi-bold text-secondary">Direct Jobs</span>
                                 </div>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                                 <div class="text-center bg-secondary py-5 px-4">
-                                    <img class="img-fluid mb-4" src="" alt="">
                                     <h1 class="display-6" data-toggle="counter-up">442</h1>
                                     <span class="fs-5 fw-semi-bold text-primary">Indirect Jobs</span>
                                 </div>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="text-center bg-secondary py-5 px-4">
-                                    <img class="img-fluid mb-4" src="" alt="">
                                     <h1 class="display-6" data-toggle="counter-up">672</h1>
                                     <span class="fs-5 fw-semi-bold text-primary">Investment ($M)</span>
                                 </div>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
                                 <div class="text-center bg-primary py-5 px-4">
-                                    <img class="img-fluid mb-4" src="" alt="">
                                     <h1 class="display-6 text-white" data-toggle="counter-up">457</h1>
                                     <span class="fs-5 fw-semi-bold text-secondary">Revenue ($M)</span>
                                 </div>
@@ -210,14 +208,13 @@
             </div>
         </div>
     </div>
-    <!-- Features End -->
 
-    <!-- Service Start -->
+    <!-- Resource Distribution Section -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">Waste distribution</p>
-                <h1 class="mb-5">Some Insights on Wastage</h1>
+                <p class="section-title bg-white text-center text-primary px-3">Resource Distribution</p>
+                <h1 class="mb-5">Some Insights on Resource Utilization</h1>
             </div>
             <div class="row gy-5 gx-4">
                 <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -229,8 +226,8 @@
                             <div class="service-icon">
                                 <img class="img-fluid rounded-circle" src="img/Service/Total_Volume_Organic_Waste_Excluding_Forestry.jpg" alt="">
                             </div>
-                            <h5 class="mb-3">Proportional mix of major industry contribution in the total volume of organic materials excluding forestry</h4>
-                            <a class="btn btn-square rounded-circle" href=""><i class="bi bi-chevron-double-right"></i></a>
+                            <h5 class="mb-3">Proportional mix of major industry contribution in the total volume of organic resources excluding forestry</h5>
+                            <a href="javascript:void(0);" onclick="openProportionalMixPopup()" class="btn btn-info">Explore Sustainable Contributions</a>
                         </div>
                     </div>
                 </div>
@@ -243,106 +240,131 @@
                             <div class="service-icon">
                                 <img class="img-fluid rounded-circle" src="img/Service/Map_Waste_Volumes_Excluding_Forestry.jpg" alt="">
                             </div>
-                            <h5 class="mb-3">Waste volumes by location excluding forestry</h5>
-                            <a class="btn btn-square rounded-circle" href=""><i class="bi bi-chevron-double-right"></i></a>
+                            <h5 class="mb-3">Resource volumes by location excluding forestry</h5>
+                            <a href="javascript:void(0);" class="btn btn-info popup-opener" data-target="popupExcludingForestry">Explore Exclusive Breakdown</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item d-flex h-100">
                         <div class="service-img">
-                            <img class="img-fluid" src="img/Service/Map_Waste_Volumes_Including_Forestry.jpg" alt="">
+                            <img class="img-fluid" src="img/Service/Map_Waste_Volumes_Including_Forestry.jpg" alt="Resource volumes by location including forestry">
                         </div>
                         <div class="service-text p-5 pt-0">
                             <div class="service-icon">
-                                <img class="img-fluid rounded-circle" src="img/Service/Map_Waste_Volumes_Including_Forestry.jpg" alt="">
+                                <img class="img-fluid rounded-circle" src="img/Service/Map_Waste_Volumes_Including_Forestry.jpg" alt="Icon for resource volumes including forestry">
                             </div>
-                            <h5 class="mb-3">Waste volumes by location including forestry</h5>
-                            <a class="btn btn-square rounded-circle" href=""><i class="bi bi-chevron-double-right"></i></a>
+                            <h5 class="mb-3">Resource volumes by location including forestry</h5>
+                            <a href="javascript:void(0);" class="btn btn-info popup-opener" data-target="popupIncludingForestry">Discover Forestry Impact</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Service End -->
 
-
-    <!-- Gallery Start -->
+    <!-- Gallery Section -->
     <div class="container-xxl py-5 px-0">
-        <div class="row g-0">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/Gallery/Farm.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Gallery/Farm.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/Gallery/BioEnergy_Idea.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Gallery/BioEnergy_Idea.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/Gallery/Waste_Agricultural_Residues_Wood.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Gallery/Waste_Agricultural_Residues_Wood.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/Gallery/Waste.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Gallery/Waste.jpg" alt="">
-                        </a>
+        <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="section-title bg-white text-center text-primary px-3">Gallery</p>
+            <h1 class="mb-5">Our BioEconomy Innovations</h1>
+        </div>
+        <div class="row g-4" id="gallery">
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.1s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Gallery/Farm.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Gallery/Farm.jpg" alt="Farm Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Farm in Gippsland showcasing sustainable agriculture practices.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/Gallery/Bird.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Gallery/Bird.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/Gallery/Wood_Waste.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Gallery/Wood_Waste.jpg" alt="">
-                        </a>
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.3s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Gallery/BioEnergy_Idea.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Gallery/BioEnergy_Idea.jpg" alt="BioEnergy Idea Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Innovative ideas for bioenergy solutions to reduce carbon footprint.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/Gallery/Biomass_Sources.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Gallery/Biomass_Sources.jpg" alt="">
-                        </a>
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.5s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Gallery/Waste_Agricultural_Residues_Wood.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Gallery/Waste_Agricultural_Residues_Wood.jpg" alt="Agricultural Residues Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Utilization of agricultural residues and wood materials in bioeconomy.</p>
                     </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/Carousel/Login_BG.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="img/Carousel/Login_BG.jpg" alt="">
-                        </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.7s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Gallery/Waste.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Gallery/Waste.jpg" alt="Resource Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Innovative resource management solutions for a sustainable future.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.9s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Gallery/Bird.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Gallery/Bird.jpg" alt="Bird Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Preserving biodiversity in Gippsland through sustainable practices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="1.1s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Gallery/Wood_Waste.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Gallery/Wood_Waste.jpg" alt="Wood Materials Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Transforming wood materials into valuable bio-based products.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="1.3s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Gallery/Biomass_Sources.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Gallery/Biomass_Sources.jpg" alt="Biomass Sources Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Diverse sources of biomass for energy and materials in bioeconomy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="1.5s">
+                <div class="position-relative rounded overflow-hidden">
+                    <a class="d-block" href="img/Carousel/Login_BG.jpg" data-lightbox="gallery">
+                        <img class="img-fluid rounded" src="img/Carousel/Login_BG.jpg" alt="Login Background Image">
+                    </a>
+                    <div class="gallery-text">
+                        <p>Supporting local communities through bioeconomy innovations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Gallery End -->
 
-    <!-- Team Start -->
+    <!-- Team Section -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <p class="section-title bg-white text-center text-primary px-3">Our Team</p>
-                <h1 class="mb-5"> Team Members</h1>
+                <h1 class="mb-5">Team Members</h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item rounded p-4">
-                        <h5>Ashley Hall</h5>
-                        <p class="text-primary">Project Manager - Energy & Waste</p>
+                        <h5>Abhishek Roy</h5>
+                        <p class="text-primary">Developing Team Member</p>
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -350,10 +372,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item rounded p-4">
-                        <h5>Darren Randle</h5>
-                        <p class="text-primary">Senior Program Officer - Energy</p>
+                        <h5>Peter Madu</h5>
+                        <p class="text-primary">Developing Team Member</p>
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -361,10 +383,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item rounded p-4">
-                        <h5>Sarita Torres</h5>
-                        <p class="text-primary">Program Support Officer - Energy & Waste</p>
+                        <h5>Miguel Luis Angeles</h5>
+                        <p class="text-primary">Developing Team Member</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item rounded p-4">
+                        <h5>Abdul Sami</h5>
+                        <p class="text-primary">Developing Team Member</p>
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -375,51 +408,147 @@
             </div>
         </div>
     </div>
-    <!-- Team End -->
+
+    <!-- Popups -->
+    <div id="proportionalMixPopup" class="popup-overlay" onclick="closePopup('proportionalMixPopup')">
+        <div class="popup-content" onclick="event.stopPropagation();">
+            <button onclick="closePopup('proportionalMixPopup')" style="position: absolute; top: 10px; right: 30px; cursor: pointer;">&times;</button>
+            <div class="popup-title-above-image">
+                <h2>Gippsland's Organic Resource Breakdown</h2>
+            </div>
+            <div class="popup-image">
+                <img id="proportionalZoomImg" src="img/Service/Total_Volume_Organic_Waste_Excluding_Forestry.jpg" alt="Proportional Mix of Industry resources" style="width: 80%;">
+                <div class="zoom-controls">
+                    <button onclick="zoomIn('proportionalZoomImg')"><i class="fa fa-plus"></i></button>
+                    <button onclick="zoomOut('proportionalZoomImg')"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="popup-text">
+                <h5 class="popup-title">Insights into Resource Distribution</h5>
+                <p>This chart illustrates Gippsland's organic materials, totaling 1,413,245 tonnes, from sectors excluding forestry. Key contributors include Dairy Processing (37%), Dairy Farming (21%), Waste Collection (16%), Manufacturing (14%), Poultry (10%), and Fruit & Veg Growing (2%).</p>
+                <p>Understanding this distribution helps identify which sectors are most involved in generating organic resources, guiding efforts to enhance sustainability and resource efficiency within the region.</p>
+            </div>
+        </div>
+    </div>
+    <div id="popupExcludingForestry" class="popup-overlay" onclick="closePopup('popupExcludingForestry')">
+        <div class="popup-content" onclick="event.stopPropagation();">
+            <button onclick="closePopup('popupExcludingForestry')" style="position: absolute; top: 10px; right: 30px; cursor: pointer;">&times;</button>
+            <div class="popup-title-above-image">
+                <h2>Resource Volumes by Location Excluding Forestry</h2>
+            </div>
+            <div class="popup-image">
+                <img id="zoomImgExcludingForestry" src="img/Service/Map_Waste_Volumes_Excluding_Forestry.jpg" alt="Resource Volumes Excluding Forestry" style="width: 100%;">
+                <div class="zoom-controls">
+                    <button onclick="zoomIn('zoomImgExcludingForestry')"><i class="fa fa-plus"></i></button>
+                    <button onclick="zoomOut('zoomImgExcludingForestry')"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="popup-text">
+                <h5 class="popup-title">Insights into Resource Distribution</h5>
+                <p>This data showcases the distribution of 1,451,245 tonnes of organic resources across Gippsland, excluding forestry. Key areas include:</p>
+                <ul>
+                    <li>Latrobe (265,840 T) - Dairy and Poultry</li>
+                    <li>Baw Baw (481,377 T) - Dairy Processing</li>
+                    <li>Wellington (219,467 T) - Mixed Agriculture</li>
+                    <li>South Gippsland (463,782 T) - Dairy and Meat</li>
+                    <li>East Gippsland (8,597 T) - Fruit & Vegetable Growing</li>
+                    <li>Bass Coast (12,182 T) - Resource Collection</li>
+                </ul>
+                <p>These insights allow for targeted resource management strategies, helping to optimize the use of organic materials and improve sustainability practices within each area.</p>
+            </div>
+        </div>
+    </div>
+    <div id="popupIncludingForestry" class="popup-overlay" onclick="closePopup('popupIncludingForestry')">
+        <div class="popup-content" onclick="event.stopPropagation();">
+            <button onclick="closePopup('popupIncludingForestry')" style="position: absolute; top: 10px; right: 30px; cursor: pointer;">&times;</button>
+            <div class="popup-title-above-image">
+                <h2>Resource Volumes by Location Including Forestry</h2>
+            </div>
+            <div class="popup-image">
+                <img id="zoomImgIncludingForestry" src="img/Service/Map_Waste_Volumes_Including_Forestry.jpg" alt="Resource Volumes Including Forestry" style="width: 100%;">
+                <div class="zoom-controls">
+                    <button onclick="zoomIn('zoomImgIncludingForestry')"><i class="fa fa-plus"></i></button>
+                    <button onclick="zoomOut('zoomImgIncludingForestry')"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="popup-text">
+                <h5 class="popup-title">Expanded Insights into Resource Management</h5>
+                <p>Including forestry, Gippsland's total organic resource volume significantly increases. Key areas include:</p>
+                <ul>
+                    <li>East Gippsland (974,597 T) - Forestry Residue</li>
+                    <li>South Gippsland (762,800 T) - Mixed Agriculture and Forestry</li>
+                    <li>Latrobe (269,173 T) - Dairy and Forestry</li>
+                    <li>Baw Baw (481,377 T) - Dairy Processing</li>
+                    <li>Wellington (467,115 T) - Mixed Agriculture</li>
+                    <li>Bass Coast (12,182 T) - Resource Collection</li>
+                </ul>
+                <p>These figures highlight the importance of forestry in the region's resource landscape, providing valuable data for sustainable resource planning and policy development.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark-green footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Our Office</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Gippsland, Australia</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+61 123 456 789</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Gippsland, VIC, Australia</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@bioeconomyinnovation.com</p>
                     <div class="d-flex pt-3">
-                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-secondary rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="https://www.circularfarms.com.au/home-1">Marketplace</a>
+                    <a class="btn btn-link" href="dashboard.html">Dashboard</a>
+                    <a class="btn btn-link" href="index.html">Home</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Business Hours</h5>
                     <p class="mb-1">Monday - Friday</p>
-                    <h6 class="text-light">N/A</h6>
+                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
                     <p class="mb-1">Saturday</p>
-                    <h6 class="text-light">Closed</h6>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
                     <p class="mb-1">Sunday</p>
                     <h6 class="text-light">Closed</h6>
                 </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-<!-- Back to Top -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-secondary text-body copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="fw-semi-bold" href="#">BioEconomy Innovation</a>, All Right Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top Button -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
+    
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -429,8 +558,6 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/parallax/parallax.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
 
