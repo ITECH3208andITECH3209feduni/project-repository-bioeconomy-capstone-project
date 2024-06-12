@@ -1139,6 +1139,29 @@ header {
     background-color: #f4f4f4;
 }
 
+.flourish-embed {
+    width: 50%;
+    height: 80vh;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flourish-embed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.flourish-embed {
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+
 #charts {
     width: 100%;
     display: table;
