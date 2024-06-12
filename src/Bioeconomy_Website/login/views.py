@@ -20,7 +20,7 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 auth_login(request, user)
-                return redirect('/polls/')  # Redirect to a success page or dashboard
+                return redirect('index') 
             else:
                 return render(request, 'login.html', {'error_message': 'Invalid email or password'})
         else:
@@ -30,7 +30,7 @@ def login_view(request):
     
 @login_required
 def success_view(request):
-    return render(request, '/polls/')
+    return render(request, 'index')
 
 def logout_view(request):
     logout(request)

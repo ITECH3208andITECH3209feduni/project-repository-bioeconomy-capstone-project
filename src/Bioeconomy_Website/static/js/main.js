@@ -64,53 +64,112 @@
     
 })(jQuery);
 
+// Login Page
 document.addEventListener('DOMContentLoaded', function () {
-    const wrapper = document.querySelector('.wrapper');
-    const loginForm = document.querySelector('.form-box.login');
-    const registerForm = document.querySelector('.form-box.register');
-    const forgotPasswordForm = document.querySelector('.form-box.forgot-password');
+    const formchecker = document.querySelector('.wrapper.active-popup');
 
-    const loginLinks = document.querySelectorAll('.login-link');
-    const registerLinks = document.querySelectorAll('.register-link');
-    const forgotPasswordLink = document.querySelector('.forgot-password-link');
-    const closeIcon = document.querySelector('.icon-close');
+    // Check if both login and register forms exist
+    if (formchecker) {
+        const wrapper = document.querySelector('.wrapper');
+        const loginForm = document.querySelector('.form-box.login');
+        const registerForm = document.querySelector('.form-box.register');
+        const forgotPasswordForm = document.querySelector('.form-box.forgot-password');
 
-    // Function to hide all forms
-    function hideAllForms() {
-        loginForm.style.display = 'none';
-        registerForm.style.display = 'none';
-        forgotPasswordForm.style.display = 'none';
-    }
+        const loginLinks = document.querySelectorAll('.login-link');
+        const registerLinks = document.querySelectorAll('.register-link');
+        const forgotPasswordLink = document.querySelector('.forgot-password-link');
+        const closeIcon = document.querySelector('.icon-close');
 
-    // Function to show a specific form
-    function showForm(form) {
-        hideAllForms();
-        form.style.display = 'block';
-        wrapper.classList.add('active-popup'); // Ensure the wrapper is visible
-    }
-
-    // Event listeners for each link
-    loginLinks.forEach(link => link.addEventListener('click', () => showForm(loginForm)));
-    registerLinks.forEach(link => link.addEventListener('click', () => showForm(registerForm)));
-    forgotPasswordLink.addEventListener('click', () => showForm(forgotPasswordForm));
-
-    // Event listener for closing the popup
-    closeIcon.addEventListener('click', () => {
-        hideAllForms(); // Hide all forms when closing
-        wrapper.classList.remove('active-popup'); // Hide the popup
-    });
-
-    // Ensures that clicks inside the form do not close the form
-    document.querySelectorAll('.form-box').forEach(box => {
-        box.addEventListener('click', event => event.stopPropagation());
-    });
-
-    // Event listener for wrong credentials
-    document.addEventListener("DOMContentLoaded", function() {
-        if (document.getElementById("login-error").value === "true") {
-            document.querySelector(".wrapper").classList.add("active-popup");
+        // Function to hide all forms
+        function hideAllForms() {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'none';
+            forgotPasswordForm.style.display = 'none';
         }
-    });
+
+        // Function to show a specific form
+        function showForm(form) {
+            hideAllForms();
+            form.style.display = 'block';
+            wrapper.classList.add('active-popup'); // Ensure the wrapper is visible
+        }
+
+        // Event listeners for each link
+        loginLinks.forEach(link => link.addEventListener('click', () => showForm(loginForm)));
+        registerLinks.forEach(link => link.addEventListener('click', () => showForm(registerForm)));
+        forgotPasswordLink.addEventListener('click', () => showForm(forgotPasswordForm));
+
+        // Event listener for closing the popup
+        closeIcon.addEventListener('click', () => {
+            hideAllForms(); // Hide all forms when closing
+            wrapper.classList.remove('active-popup'); // Hide the popup
+        });
+
+        // Ensures that clicks inside the form do not close the form
+        document.querySelectorAll('.form-box').forEach(box => {
+            box.addEventListener('click', event => event.stopPropagation());
+        });
+
+        // Event listener for wrong credentials
+        document.addEventListener("DOMContentLoaded", function() {
+            if (document.getElementById("login-error").value === "true") {
+                document.querySelector(".wrapper").classList.add("active-popup");
+            }
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const formchecker = document.querySelector('.wrapper.active-popup');
+    
+    if (formchecker) {
+        const wrapper = document.querySelector('.wrapper');
+        const loginForm = document.querySelector('.form-box.login');
+        const registerForm = document.querySelector('.form-box.register');
+        const forgotPasswordForm = document.querySelector('.form-box.forgot-password');
+
+        const loginLinks = document.querySelectorAll('.login-link');
+        const registerLinks = document.querySelectorAll('.register-link');
+        const forgotPasswordLink = document.querySelector('.forgot-password-link');
+        const closeIcon = document.querySelector('.icon-close');
+
+        // Function to hide all forms
+        function hideAllForms() {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'none';
+            forgotPasswordForm.style.display = 'none';
+        }
+
+        // Function to show a specific form
+        function showForm(form) {
+            hideAllForms();
+            form.style.display = 'block';
+            wrapper.classList.add('active-popup'); // Ensure the wrapper is visible
+        }
+
+        // Event listeners for each link
+        loginLinks.forEach(link => link.addEventListener('click', () => showForm(loginForm)));
+        registerLinks.forEach(link => link.addEventListener('click', () => showForm(registerForm)));
+        forgotPasswordLink.addEventListener('click', () => showForm(forgotPasswordForm));
+
+        // Event listener for closing the popup
+        closeIcon.addEventListener('click', () => {
+            hideAllForms(); // Hide all forms when closing
+            wrapper.classList.remove('active-popup'); // Hide the popup
+        });
+
+        // Ensures that clicks inside the form do not close the form
+        document.querySelectorAll('.form-box').forEach(box => {
+            box.addEventListener('click', event => event.stopPropagation());
+        });
+
+        // Event listener for wrong credentials
+        document.addEventListener("DOMContentLoaded", function() {
+            if (document.getElementById("login-error").value === "true") {
+                document.querySelector(".wrapper").classList.add("active-popup");
+            }
+        });
+    }
 });
 
 
@@ -156,7 +215,15 @@ function showMessage(message) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetchDataAndUpdateDashboard();
+    const summarySection = document.getElementById('summary');
+
+    if (summarySection) {
+        fetchDataAndUpdateDashboard();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    
 });
 
 async function fetchDataAndUpdateDashboard() {
@@ -981,6 +1048,76 @@ function updateScatterPlot(filteredData) {
     }
 }
 
+// Popup Functions
+function openPopup(id) {
+    var popup = document.getElementById(id);
+    if (popup) {
+        popup.style.display = 'flex';
+    }
+}
+
+function closePopup(id) {
+    var popup = document.getElementById(id);
+    if (popup) {
+        popup.style.display = 'none';
+    }
+}
+
+function zoomIn(imageId) {
+    let img = document.getElementById(imageId);
+    if (img) {
+        let currWidth = img.clientWidth;
+        img.style.width = (currWidth + 100) + "px";
+    }
+}
+
+function zoomOut(imageId) {
+    let img = document.getElementById(imageId);
+    if (img) {
+        let currWidth = img.clientWidth;
+        if (currWidth > 100) {
+            img.style.width = (currWidth - 100) + "px";
+        }
+    }
+}
+
+function openProportionalMixPopup() {
+    openPopup('proportionalMixPopup');
+}
+
+function openExcludingForestryPopup() {
+    openPopup('popupExcludingForestry');
+}
+
+function openIncludingForestryPopup() {
+    openPopup('popupIncludingForestry');
+}
+
+// Keydown Events for Popups
+document.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+        closePopup('popupExcludingForestry');
+        closePopup('popupIncludingForestry');
+        closePopup('proportionalMixPopup');
+    }
+});
+
+document.querySelectorAll('.popup-opener').forEach(function (element) {
+    element.addEventListener('click', function () {
+        var targetId = this.getAttribute('data-target');
+        openPopup(targetId);
+    });
+});
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === "Enter") {
+        var activeElement = document.activeElement;
+        if (activeElement.classList.contains('popup-opener')) {
+            var targetId = activeElement.getAttribute('data-target');
+            openPopup(targetId);
+        }
+    }
+});
 
 
 

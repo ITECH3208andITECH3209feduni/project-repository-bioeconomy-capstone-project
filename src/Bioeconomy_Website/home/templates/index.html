@@ -137,61 +137,146 @@
 </div>
 <!-- Features End -->
 
-<!-- Service Start -->
+<!-- Resource Distribution Section -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <p class="section-title bg-white text-center text-primary px-3">Byproduct Distribution</p>
-            <h1 class="mb-5">Some Insights on Byproducts</h1>
+            <p class="section-title bg-white text-center text-primary px-3">Resource Distribution</p>
+            <h1 class="mb-5">Some Insights on Resource Utilization</h1>
         </div>
         <div class="row gy-5 gx-4">
             <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item d-flex h-100">
+                <div class="service-item d-flex flex-column justify-content-between h-100">
                     <div class="service-img">
                         <img class="img-fluid" src="{% static 'img/Service/Total_Volume_Organic_Waste_Excluding_Forestry.jpg' %}" alt="">
                     </div>
-                    <div class="service-text p-5 pt-0">
+                    <div class="service-text p-5 pt-0 flex-grow-1">
                         <div class="service-icon">
                             <img class="img-fluid rounded-circle" src="{% static 'img/Service/Total_Volume_Organic_Waste_Excluding_Forestry.jpg' %}" alt="">
                         </div>
-                        <h5 class="mb-3">Proportional mix of major industry contribution in the total volume of organic materials excluding forestry</h4>
-                        <a class="btn btn-square rounded-circle" href=""><i class="bi bi-chevron-double-right"></i></a>
+                        <h5 class="mb-3">Proportional mix of major industry contribution in the total volume of organic resources excluding forestry</h5>
+                    </div>
+                    <div class="mt-auto text-center">
+                        <a href="javascript:void(0);" onclick="openProportionalMixPopup()" class="btn btn-secondary rounded-pill py-3 px-5">Explore Sustainable Contributions</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item d-flex h-100">
+                <div class="service-item d-flex flex-column justify-content-between h-100">
                     <div class="service-img">
                         <img class="img-fluid" src="{% static 'img/Service/Map_Waste_Volumes_Excluding_Forestry.jpg' %}" alt="">
                     </div>
-                    <div class="service-text p-5 pt-0">
+                    <div class="service-text p-5 pt-0 flex-grow-1">
                         <div class="service-icon">
                             <img class="img-fluid rounded-circle" src="{% static 'img/Service/Map_Waste_Volumes_Excluding_Forestry.jpg' %}" alt="">
                         </div>
-                        <h5 class="mb-3">Waste volumes by location excluding forestry</h5>
-                        <a class="btn btn-square rounded-circle" href=""><i class="bi bi-chevron-double-right"></i></a>
+                        <h5 class="mb-3">Resource volumes by location excluding forestry</h5>
+                    </div>
+                    <div class="mt-auto text-center">
+                        <a href="javascript:void(0);" onclick="openExcludingForestryPopup()" class="btn btn-secondary rounded-pill py-3 px-5" data-target="popupExcludingForestry">Explore Exclusive Breakdown</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item d-flex h-100">
+                <div class="service-item d-flex flex-column justify-content-between h-100">
                     <div class="service-img">
-                        <img class="img-fluid" src="{% static 'img/Service/Map_Waste_Volumes_Including_Forestry.jpg' %}" alt="">
+                        <img class="img-fluid" src="{% static 'img/Service/Map_Waste_Volumes_Including_Forestry.jpg' %}" alt="Resource volumes by location including forestry">
                     </div>
-                    <div class="service-text p-5 pt-0">
+                    <div class="service-text p-5 pt-0 flex-grow-1">
                         <div class="service-icon">
-                            <img class="img-fluid rounded-circle" src="{% static 'img/Service/Map_Waste_Volumes_Including_Forestry.jpg' %}" alt="">
+                            <img class="img-fluid rounded-circle" src="{% static 'img/Service/Map_Waste_Volumes_Including_Forestry.jpg' %}" alt="Icon for resource volumes including forestry">
                         </div>
-                        <h5 class="mb-3">Waste volumes by location including forestry</h5>
-                        <a class="btn btn-square rounded-circle" href=""><i class="bi bi-chevron-double-right"></i></a>
+                        <h5 class="mb-3">Resource volumes by location including forestry</h5>
+                    </div>
+                    <div class="mt-auto text-center">
+                        <a href="javascript:void(0);" onclick="openIncludingForestryPopup()" class="btn btn-secondary rounded-pill py-3 px-5" data-target="popupIncludingForestry">Discover Forestry Impact</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Service End -->
+<!-- Resource Distribution Section End -->
 
+
+<!-- Popups -->
+<div id="proportionalMixPopup" class="popup-overlay" onclick="closePopup('proportionalMixPopup')">
+    <div class="popup-content" onclick="event.stopPropagation();">
+        <button onclick="closePopup('proportionalMixPopup')" style="position: absolute; top: 10px; right: 30px; cursor: pointer;">&times;</button>
+        <div class="popup-title-above-image">
+            <h2>Gippsland's Organic Resource Breakdown</h2>
+        </div>
+        <div class="popup-image">
+            <img id="proportionalZoomImg" src="{% static 'img/Service/Total_Volume_Organic_Waste_Excluding_Forestry.jpg' %}" alt="Proportional Mix of Industry resources" style="width: 80%;">
+            <div class="zoom-controls">
+                <button onclick="zoomIn('proportionalZoomImg')"><i class="fa fa-plus"></i></button>
+                <button onclick="zoomOut('proportionalZoomImg')"><i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="popup-text">
+            <h5 class="popup-title">Insights into Resource Distribution</h5>
+            <p>This chart illustrates Gippsland's organic materials, totaling 1,413,245 tonnes, from sectors excluding forestry. Key contributors include Dairy Processing (37%), Dairy Farming (21%), Waste Collection (16%), Manufacturing (14%), Poultry (10%), and Fruit & Veg Growing (2%).</p>
+            <p>Understanding this distribution helps identify which sectors are most involved in generating organic resources, guiding efforts to enhance sustainability and resource efficiency within the region.</p>
+        </div>
+    </div>
+</div>
+<div id="popupExcludingForestry" class="popup-overlay" onclick="closePopup('popupExcludingForestry')">
+    <div class="popup-content" onclick="event.stopPropagation();">
+        <button onclick="closePopup('popupExcludingForestry')" style="position: absolute; top: 10px; right: 30px; cursor: pointer;">&times;</button>
+        <div class="popup-title-above-image">
+            <h2>Resource Volumes by Location Excluding Forestry</h2>
+        </div>
+        <div class="popup-image">
+            <img id="zoomImgExcludingForestry" src="{% static 'img/Service/Map_Waste_Volumes_Excluding_Forestry.jpg' %}" alt="Resource Volumes Excluding Forestry" style="width: 100%;">
+            <div class="zoom-controls">
+                <button onclick="zoomIn('zoomImgExcludingForestry')"><i class="fa fa-plus"></i></button>
+                <button onclick="zoomOut('zoomImgExcludingForestry')"><i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="popup-text">
+            <h5 class="popup-title">Insights into Resource Distribution</h5>
+            <p>This data showcases the distribution of 1,451,245 tonnes of organic resources across Gippsland, excluding forestry. Key areas include:</p>
+            <ul>
+                <li>Latrobe (265,840 T) - Dairy and Poultry</li>
+                <li>Baw Baw (481,377 T) - Dairy Processing</li>
+                <li>Wellington (219,467 T) - Mixed Agriculture</li>
+                <li>South Gippsland (463,782 T) - Dairy and Meat</li>
+                <li>East Gippsland (8,597 T) - Fruit & Vegetable Growing</li>
+                <li>Bass Coast (12,182 T) - Resource Collection</li>
+            </ul>
+            <p>These insights allow for targeted resource management strategies, helping to optimize the use of organic materials and improve sustainability practices within each area.</p>
+        </div>
+    </div>
+</div>
+<div id="popupIncludingForestry" class="popup-overlay" onclick="closePopup('popupIncludingForestry')">
+    <div class="popup-content" onclick="event.stopPropagation();">
+        <button onclick="closePopup('popupIncludingForestry')" style="position: absolute; top: 10px; right: 30px; cursor: pointer;">&times;</button>
+        <div class="popup-title-above-image">
+            <h2>Resource Volumes by Location Including Forestry</h2>
+        </div>
+        <div class="popup-image">
+            <img id="zoomImgIncludingForestry" src="{% static 'img/Service/Map_Waste_Volumes_Including_Forestry.jpg' %}" alt="Resource Volumes Including Forestry" style="width: 100%;">
+            <div class="zoom-controls">
+                <button onclick="zoomIn('zoomImgIncludingForestry')"><i class="fa fa-plus"></i></button>
+                <button onclick="zoomOut('zoomImgIncludingForestry')"><i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="popup-text">
+            <h5 class="popup-title">Expanded Insights into Resource Management</h5>
+            <p>Including forestry, Gippsland's total organic resource volume significantly increases. Key areas include:</p>
+            <ul>
+                <li>East Gippsland (974,597 T) - Forestry Residue</li>
+                <li>South Gippsland (762,800 T) - Mixed Agriculture and Forestry</li>
+                <li>Latrobe (269,173 T) - Dairy and Forestry</li>
+                <li>Baw Baw (481,377 T) - Dairy Processing</li>
+                <li>Wellington (467,115 T) - Mixed Agriculture</li>
+                <li>Bass Coast (12,182 T) - Resource Collection</li>
+            </ul>
+            <p>These figures highlight the importance of forestry in the region's resource landscape, providing valuable data for sustainable resource planning and policy development.</p>
+        </div>
+    </div>
+</div>
+<!-- Popups End -->
 
 <!-- Gallery Start -->
 <div class="container-xxl py-5 px-0">
@@ -259,15 +344,15 @@
 <!-- Team Start -->
 <div class="container-xxl py-5">
     <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        <div class="text-center mx-auto wow fadeInUp dynamic-container" data-wow-delay="0.1s" style="max-width: 500px;">
             <p class="section-title bg-white text-center text-primary px-3">Our Team</p>
-            <h1 class="mb-5"> Team Members</h1>
+            <h1 class="mb-5">Team Members</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp dynamic-container" data-wow-delay="0.1s">
                 <div class="team-item rounded p-4">
-                    <h5>Ashley Hall</h5>
-                    <p class="text-primary">Project Manager - Energy & Waste</p>
+                    <h5>Abhishek Roy</h5>
+                    <p class="text-primary">Developing Team Member</p>
                     <div class="d-flex justify-content-center">
                         <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -275,10 +360,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp dynamic-container" data-wow-delay="0.3s">
                 <div class="team-item rounded p-4">
-                    <h5>Darren Randle</h5>
-                    <p class="text-primary">Senior Program Officer - Energy</p>
+                    <h5>Peter Madu</h5>
+                    <p class="text-primary">Developing Team Member</p>
                     <div class="d-flex justify-content-center">
                         <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -286,10 +371,21 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp dynamic-container" data-wow-delay="0.5s">
                 <div class="team-item rounded p-4">
-                    <h5>Sarita Torres</h5>
-                    <p class="text-primary">Program Support Officer - Energy & Waste</p>
+                    <h5>Miguel Luis Angeles</h5>
+                    <p class="text-primary">Developing Team Member</p>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp dynamic-container" data-wow-delay="0.7s">
+                <div class="team-item rounded p-4">
+                    <h5>Abdul Sami</h5>
+                    <p class="text-primary">Developing Team Member</p>
                     <div class="d-flex justify-content-center">
                         <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>

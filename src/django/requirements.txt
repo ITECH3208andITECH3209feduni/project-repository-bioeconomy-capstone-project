@@ -2,3 +2,4 @@ Django
 psycopg2-binary # For PostgreSQL database support
 pandas # For reading excel files
 openpyxl # For working with excel files
+
