@@ -1133,10 +1133,21 @@ header {
 }
 
 /* Center the select element horizontally */
-#region-dropdown {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+.header-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    height: 60px; /* Adjust as needed */
+}
+.centered-dropdown {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust as needed for spacing between buttons */
 }
 
 #summary {

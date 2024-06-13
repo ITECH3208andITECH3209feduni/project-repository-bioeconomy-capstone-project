@@ -8,6 +8,8 @@ from django.contrib import messages
 from django.core.serializers import serialize
 from .models import WasteData
 from django.http import JsonResponse
+from django.http import HttpResponse
+from django.conf import settings
 import os
 
 def handle_uploaded_csv(csv_file):
@@ -111,3 +113,17 @@ def dashboard_view(request):
 def get_waste_data(request):
     data = WasteData.objects.all().values()
     return JsonResponse(list(data), safe=False)
+
+def download_excel(request):
+    # Path to your existing Excel file in the static directory
+    file_path = os.path.join(settings.STATICFILES_DIRS[0], 'files', 'upload_template.xlsx')
+
+    # Read the file
+    with open(file_path, 'rb') as f:
+        file_data = f.read()
+
+    # Create a HttpResponse object and set the appropriate headers for Excel file
+    response = HttpResponse(file_data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=upload_template.xlsx'
+
+    return response
