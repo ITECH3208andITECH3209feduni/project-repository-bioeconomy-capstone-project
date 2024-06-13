@@ -345,8 +345,8 @@ function updateChart(filteredData) {
             datasets: [{
                 label: 'Volume pa MT',
                 data: data,
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(0, 100, 0, 0.7)', // Dark green background color
+                borderColor: 'rgba(0, 100, 0, 1)', // Dark green border color
                 borderWidth: 1
             }]
         },
@@ -402,14 +402,14 @@ function updateDonutCharts(filteredData) {
             datasets: [{
                 data: Object.values(totalWasteByType),
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 0, 255, 0.2)', 
-                    'rgba(0, 255, 255, 0.2)',
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(255, 0, 255, 0.7)', 
+                    'rgba(0, 255, 255, 0.7)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -458,13 +458,13 @@ function updateDonutCharts(filteredData) {
             datasets: [{
                 data: Object.values(totalWasteByTypeExclForestry),
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 0, 255, 0.2)', 
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(255, 0, 255, 0.7)', 
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -542,19 +542,19 @@ function updateIndustryContributionChart(filteredData) {
             datasets: [{
                 data: data,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 0, 255, 0.2)',
-                    'rgba(0, 255, 255, 0.2)',
-                    'rgba(255, 255, 0, 0.2)',   
-                    'rgba(0, 255, 0, 0.2)',     
-                    'rgba(128, 0, 0, 0.2)',     
-                    'rgba(255, 192, 203, 0.2)', 
-                    'rgba(0, 0, 128, 0.2)',    
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(255, 0, 255, 0.7)',
+                    'rgba(0, 255, 255, 0.7)',
+                    'rgba(255, 255, 0, 0.7)',   
+                    'rgba(0, 255, 0, 0.7)',     
+                    'rgba(128, 0, 0, 0.7)',     
+                    'rgba(255, 192, 203, 0.7)', 
+                    'rgba(0, 0, 128, 0.7)',    
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -649,8 +649,8 @@ function updateWasteDestinationChart(filteredData) {
             datasets: [{
                 label: 'volume_pa_mt',
                 data: data,
-                backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                borderColor: 'rgba(153, 102, 255, 1)',
+                backgroundColor: 'rgba(0, 100, 0, 0.7)', // Dark green background color
+                borderColor: 'rgba(0, 100, 0, 1)', // Dark green border color
                 borderWidth: 1
             }]
         },
@@ -718,8 +718,8 @@ function updateSeasonalVolumeChart(filteredData) {
             datasets: [{
                 label: 'volume_pa_mt',
                 data: data,
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(0, 100, 0, 0.7)', // Dark green background color
+                borderColor: 'rgba(0, 100, 0, 1)', // Dark green border color
                 borderWidth: 1
             }]
         },
@@ -787,8 +787,8 @@ function updateWasteProfileChart(filteredData) {
             datasets: [{
                 label: 'volume_pa_mt',
                 data: data,
-                backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                borderColor: 'rgba(255, 206, 86, 1)',
+                backgroundColor: 'rgba(0, 100, 0, 0.7)', // Dark green background color
+                borderColor: 'rgba(0, 100, 0, 1)', // Dark green border color
                 borderWidth: 1
             }]
         },
@@ -888,159 +888,6 @@ function updateStackedBarChart(filteredData) {
                     y: {
                         stacked: true,
                         beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-}
-
-function updateLineChart(filteredData) {
-    const canvas = document.getElementById('lineChart');
-    if (!canvas) {
-        console.error('Canvas element with ID "lineChart" not found.');
-        return;
-    }
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-        console.error('Unable to get 2D rendering context for canvas.');
-        return;
-    }
-
-    if (!filteredData || filteredData.length === 0) {
-        console.warn('No data available for the line chart.');
-        return;
-    }
-
-    const sites = [...new Set(filteredData.map(item => item['site_number']))];
-    const seasons = ['Jan-Mar', 'Apr-Jun', 'Jul-Sep', 'Oct-Dec'];
-
-    const datasets = sites.map(site => {
-        return {
-            label: `Site ${site}`,
-            data: seasons.map(season => {
-                const siteData = filteredData.filter(item => item['site_number'] === site && item['Seasonal'] === season);
-                return siteData.reduce((acc, curr) => acc + curr['volume_pa_mt'], 0);
-            }),
-            fill: false,
-            borderColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`,
-            borderWidth: 2,
-            tension: 0.1
-        };
-    });
-
-    if (window.lineChart instanceof Chart) {
-        window.lineChart.data.labels = seasons;
-        window.lineChart.data.datasets = datasets;
-        window.lineChart.update();
-    } else {
-        window.lineChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: seasons,
-                datasets: datasets
-            },
-            options: {
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Seasonal Variation in Waste Generation'
-                    },
-                    tooltip: {
-                        mode: 'index',
-                        intersect: false
-                    },
-                    legend: {
-                        display: true,
-                        position: 'bottom'
-                    }
-                },
-                responsive: true,
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    },
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-}
-
-function updateScatterPlot(filteredData) {
-    const canvas = document.getElementById('scatterPlot');
-    if (!canvas) {
-        console.error('Canvas element with ID "scatterPlot" not found.');
-        return;
-    }
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-        console.error('Unable to get 2D rendering context for canvas.');
-        return;
-    }
-
-    if (!filteredData || filteredData.length === 0) {
-        console.warn('No data available for the scatter plot.');
-        return;
-    }
-
-    const scatterData = filteredData.map(item => ({
-        x: item['Moisture %'],
-        y: item['volume_pa_mt']
-    }));
-
-    if (window.scatterPlot instanceof Chart) {
-        window.scatterPlot.data.datasets[0].data = scatterData;
-        window.scatterPlot.update();
-    } else {
-        window.scatterPlot = new Chart(ctx, {
-            type: 'scatter',
-            data: {
-                datasets: [{
-                    label: 'Moisture % vs Waste Volume',
-                    data: scatterData,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Scatter Plot of Moisture % vs Waste Volume'
-                    },
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function (context) {
-                                const label = context.dataset.label || '';
-                                const value = context.raw || {};
-                                return `${label}: Moisture % = ${value.x}, Volume = ${value.y} MT`;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        type: 'linear',
-                        position: 'bottom',
-                        title: {
-                            display: true,
-                            text: 'Moisture %'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'volume_pa_mt'
-                        }
                     }
                 }
             }
