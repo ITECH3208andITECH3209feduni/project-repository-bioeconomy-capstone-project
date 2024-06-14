@@ -98,3 +98,23 @@ python manage.py createsuperuser
 # Start Django
 python manage.py runserver
 ```
+
+## Flourish Credentials
+
+To edit the data in the Maps you will need to access [Flourish](https://app.flourish.studio/login?redirect=true)
+- After login in click on any of the maps that you want to alter 
+- After opening the map select the Data tab on top of the window 
+- On the  right side of the page you will notice the upload button. 
+- You can choose that if you want to replace the whole data (not recommended as the regions are linked)
+- You can select upload and merge from the dropdown function to add the data or edit any of the fields
+- Wait for it to save the changes (status is shown on top right of the screen)
+- Now go to the preview section to review all the changes 
+- If you wish to continue with the changes, then click on the top right button "Export and Publish" and click "re-publish"
+
+The changes will be made and shown on the website.
+
+```bash
+#Flourish Credentials
+username: pocajo3715@morxin.com
+password: bioeco123$
+```
