@@ -428,7 +428,7 @@ function updateDonutCharts(filteredData) {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Total Waste by Type (Including Forestry)'
+                    text: 'Total Byproduct by Type (Including Forestry)'
                 },
                 tooltip: {
                     callbacks: {
@@ -482,7 +482,7 @@ function updateDonutCharts(filteredData) {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Total Waste by Type (Excluding Forestry)'
+                    text: 'Total Byproduct by Type (Excluding Forestry)'
                 },
                 tooltip: {
                     callbacks: {
@@ -658,7 +658,7 @@ function updateWasteDestinationChart(filteredData) {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Volume Breakdown of Waste Destination'
+                    text: 'Volume Breakdown of Byproduct Destination'
                 },
                 legend: {
                     display: false
@@ -796,7 +796,7 @@ function updateWasteProfileChart(filteredData) {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Waste Profile by Volume'
+                    text: 'Byproduct Profile by Volume'
                 },
                 legend: {
                     display: false
