@@ -93,10 +93,13 @@ python manage.py makemigrations
 pythone manage.py migrate
 
 # Create Super User
-python manage.py createsuperuser
+python manage.py createsuperuser #remember your credentials as you will be using it to access the accounts management
 
 # Start Django
 python manage.py runserver
+
+# Accounts Management Can Be Access Through This Link:
+localhost:8000/admin
 ```
 
 ## Flourish Credentials
