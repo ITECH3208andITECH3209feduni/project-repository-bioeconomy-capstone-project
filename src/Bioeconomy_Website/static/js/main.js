@@ -966,7 +966,70 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+// Gallery Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    function shuffle(array) {
+        let currentIndex = array.length, randomIndex;
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
 
+    const gallery = document.getElementById('gallery');
+    const items = Array.from(gallery.children);
+    shuffle(items);
+
+    gallery.innerHTML = '';
+    items.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.2}s`;
+        gallery.appendChild(item);
+    });
+
+    const lightbox = GLightbox({
+        selector: 'a[data-lightbox]',
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true,
+        openEffect: 'zoom',
+        closeEffect: 'fade',
+        slideEffect: 'fade',
+        moreText: 'More',
+        slideEndAnimation: false
+    });
+
+    // Ensure lightbox images are centered and stable
+    lightbox.on('open', () => {
+        document.querySelectorAll('.gslide-image').forEach(image => {
+            image.style.position = 'fixed';
+            image.style.top = '50%';
+            image.style.left = '50%';
+            image.style.transform = 'translate(-50%, -50%)';
+        });
+    });
+
+    lightbox.on('slide_changed', () => {
+        document.querySelectorAll('.gslide-image').forEach(image => {
+            image.style.position = 'fixed';
+            image.style.top = '50%';
+            image.style.left = '50%';
+            image.style.transform = 'translate(-50%, -50%)';
+        });
+    });
+
+    document.querySelectorAll('.glightbox-arrow').forEach(arrow => {
+        arrow.style.color = '#fff';
+        arrow.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        arrow.style.borderRadius = '50%';
+        arrow.style.padding = '10px';
+    });
+
+    document.querySelectorAll('.glightbox-arrow:hover').forEach(arrow => {
+        arrow.style.backgroundColor = 'rgba(255, 165, 0, 0.8)';
+    });
+});
 
 
 

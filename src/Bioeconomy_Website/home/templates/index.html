@@ -280,60 +280,88 @@
 
 <!-- Gallery Start -->
 <div class="container-xxl py-5 px-0">
-    <div class="row g-0">
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Gallery/Farm.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Gallery/Farm.jpg' %}" alt="Farm" loading="lazy">
-                    </a>
-                </div>
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Gallery/BioEnergy_Idea.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Gallery/BioEnergy_Idea.jpg' %}" alt="BioEnergy Idea" loading="lazy">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="row g-0">
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Gallery/Waste_Agricultural_Residues_Wood.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Gallery/Waste_Agricultural_Residues_Wood.jpg' %}" alt="Waste Agricultural Residues Wood" loading="lazy">
-                    </a>
-                </div>
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Gallery/Waste.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Gallery/Waste.jpg' %}" alt="Waste" loading="lazy">
-                    </a>
+    <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        <p class="section-title bg-white text-center text-primary px-3">Gallery</p>
+        <h1 class="mb-5">Our BioEconomy Innovations</h1>
+    </div>
+    <div class="row g-4" id="gallery">
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.1s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Gallery/Farm.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Gallery/Farm.jpg' %}" alt="Farm Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Farm in Gippsland showcasing sustainable agriculture practices.</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="row g-0">
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Gallery/Bird.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Gallery/Bird.jpg' %}" alt="Bird" loading="lazy">
-                    </a>
-                </div>
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Gallery/Wood_Waste.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Gallery/Wood_Waste.jpg' %}" alt="Wood Waste" loading="lazy">
-                    </a>
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.3s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Gallery/BioEnergy_Idea.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Gallery/BioEnergy_Idea.jpg' %}" alt="BioEnergy Idea Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Innovative ideas for bioenergy solutions to reduce carbon footprint.</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="row g-0">
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Gallery/Biomass_Sources.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Gallery/Biomass_Sources.jpg' %}" alt="Biomass Sources" loading="lazy">
-                    </a>
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.5s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Gallery/Waste_Agricultural_Residues_Wood.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Gallery/Waste_Agricultural_Residues_Wood.jpg' %}" alt="Agricultural Residues Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Utilization of agricultural residues and wood materials in bioeconomy.</p>
                 </div>
-                <div class="col-12 gallery-item">
-                    <a class="d-block" href="{% static 'img/Carousel/Login_BG.jpg' %}" data-lightbox="gallery">
-                        <img class="img-fluid" src="{% static 'img/Carousel/Login_BG.jpg' %}" alt="Login Background" loading="lazy">
-                    </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.7s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Gallery/Waste.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Gallery/Waste.jpg' %}" alt="Resource Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Innovative resource management solutions for a sustainable future.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="0.9s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Gallery/Bird.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Gallery/Bird.jpg' %}" alt="Bird Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Preserving biodiversity in Gippsland through sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="1.1s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Gallery/Wood_Waste.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Gallery/Wood_Waste.jpg' %}" alt="Wood Materials Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Transforming wood materials into valuable bio-based products.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="1.3s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Gallery/Biomass_Sources.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Gallery/Biomass_Sources.jpg' %}" alt="Biomass Sources Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Diverse sources of biomass for energy and materials in bioeconomy.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp gallery-item" data-wow-delay="1.5s">
+            <div class="position-relative rounded overflow-hidden">
+                <a class="d-block" href="{% static 'img/Carousel/Login_BG.jpg' %}" data-lightbox="gallery">
+                    <img class="img-fluid rounded" src="{% static 'img/Carousel/Login_BG.jpg' %}" alt="Login Background Image">
+                </a>
+                <div class="gallery-text">
+                    <p>Supporting local communities through bioeconomy innovations.</p>
                 </div>
             </div>
         </div>
