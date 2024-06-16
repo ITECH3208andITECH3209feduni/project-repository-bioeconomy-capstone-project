@@ -66,11 +66,11 @@ django-admin version
 #Create a folder for Bioeconomy Website
 django-admin startproject Bioeconomy_Website
 ```
-
-Copy all the contents from the Bioeconomy_Website from the git repository and paste it inside the Bioeconomy_Website
+Delete All the contents from the newly created Bioeconomy_Website folder.
+Copy all the contents from the Bioeconomy_Website from the git repository and paste it inside the Bioeconomy_Website 
 
 ```bash
-#Inside the Bioeconomy_Website folder open main folder and open settings.py and find the Django Database Settings
+#Inside the Bioeconomy_Website folder open 'main' folder and open settings.py and find the Django Database Settings
 
 DATABASES = {
     'default': {
@@ -90,7 +90,7 @@ cd Bioeconomy_Website
 python manage.py makemigrations
 
 # Migrate
-pythone manage.py migrate
+python manage.py migrate
 
 # Create Super User
 python manage.py createsuperuser #remember your credentials as you will be using it to access the accounts management
