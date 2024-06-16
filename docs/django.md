@@ -34,7 +34,7 @@ If Windows did not recognize psql command follow this guide: https://sqlbackupan
 
 ```bash
 #Login to the Database
-psql -h localhost -U postres #and enter your password
+psql -h localhost -U postgres #and enter your password
 
 #Create Database
 CREATE DATABASE bioeconomy_db;
