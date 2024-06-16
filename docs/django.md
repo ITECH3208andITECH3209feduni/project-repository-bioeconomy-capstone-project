@@ -93,7 +93,7 @@ python manage.py makemigrations
 python manage.py migrate
 
 # Create Super User
-python manage.py createsuperuser #remember your credentials as you will be using it to access the accounts management
+python manage.py createsuperuser #remember your credentials as you will be using it to access the accounts management in django and this is going to be the Admin login for the website (the email doesn't need to be an actual email)
 
 # Start Django
 python manage.py runserver
